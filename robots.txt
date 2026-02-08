@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# بعد ما يصير عندك رابط نهائي (دومين/رابط Hostinger) عدّل السطر التالي
+Sitemap: https://YOUR-SITE-URL/sitemap.xml

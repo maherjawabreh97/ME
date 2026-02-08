@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    body{ margin:0; font-family:Arial; background:#f6f7fb; }
+    .wrap{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card{ width:min(420px,100%); background:#fff; border-radius:18px; padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08); }
+    h2{ margin:0 0 6px; }
+    .sub{ margin:0 0 16px; opacity:.7; }
+    .field{ margin:10px 0; }
+    label{ display:block; font-size:13px; margin:0 0 6px; opacity:.85; }
+    input{ width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:12px; outline:none; }
+    input:focus{ border-color:#999; }
+    .row{ display:flex; gap:10px; margin-top:12px; }
+    button{ flex:1; padding:11px 12px; border:none; border-radius:12px; cursor:pointer; }
+    .btn{ background:#111; color:#fff; }
+    .btn2{ background:#e9eefc; }
+    .msg{ margin-top:10px; font-size:13px; opacity:.85; }
+
+    .btn3{
+      width:100%;
+      margin-top:10px;
+      padding:11px 12px;
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      background:#4531ab;
+      color:#fff;
+    }
+    .btn3:hover{ opacity:.92; }
+
+    /* Forgot link */
+    .forgot-row{ margin-top:8px; display:flex; justify-content:flex-start; }
+    .forgot{
+      font-size:13px;
+      color:#4531ab;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .forgot:hover{ text-decoration:underline; opacity:.9; }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.35);
+      display:none;
+      align-items:center; justify-content:center;
+      padding:24px;
+      z-index:9999;
+    }
+    .modal.active{ display:flex; }
+    .modal-box{
+      width:min(420px,100%);
+      background:#fff;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+    }
+    .modal-box h3{ margin:0 0 8px; }
+    .modal-box p{ margin:0 0 12px; opacity:.75; font-size:13px; line-height:1.6; }
+    .modal-actions{ display:flex; gap:10px; margin-top:12px; }
+    .modal-actions button{ flex:1; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h2>تسجيل</h2>
+      <p class="sub">ادخال اسم مستخدم وكلمة مرور.</p>
+
+      <div class="field">
+        <label>الإيميل</label>
+        <input id="email" type="email" placeholder="name@example.com" />
+      </div>
+
+      <div class="field">
+        <label>كلمة المرور</label>
+        <input id="password" type="password" placeholder="••••••••" />
+      </div>
+
+      <!-- NEW -->
+      <div class="forgot-row">
+        <a href="#" id="forgotLink" class="forgot">هل نسيت كلمة السر؟</a>
+      </div>
+
+      <div class="row">
+        <button id="loginBtn" class="btn">تسجيل الدخول</button>
+        <button id="signupBtn" class="btn2" type="button">تسجيل</button>
+      </div>
+
+      <button id="homeBtn" class="btn3" type="button">الصفحة الرئيسية</button>
+
+      <div id="msg" class="msg"></div>
+    </div>
+  </div>
+
+  <!-- NEW: Reset Modal -->
+  <div class="modal" id="resetModal" aria-hidden="true">
+    <div class="modal-box">
+      <h3>استرجاع كلمة المرور</h3>
+      <p>اكتب الإيميل، وسيتم إرسال رابط لتعيين كلمة مرور جديدة.</p>
+
+      <div class="field">
+        <label>الإيميل</label>
+        <input id="resetEmail" type="email" placeholder="name@example.com" />
+      </div>
+
+      <div class="modal-actions">
+        <button id="sendResetBtn" class="btn" type="button">إرسال الرابط</button>
+        <button id="closeResetBtn" class="btn2" type="button">إلغاء</button>
+      </div>
+
+      <div id="resetMsg" class="msg"></div>
+    </div>
+  </div>
+
+  <script type="module" src="../assets/js/login.js"></script>
+</body>
+</html>

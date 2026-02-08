@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- ===== Meta Tags ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>الجوابرة للخدمات التعليمية - طريقك نحو النجاح</title>
+    <meta name="description" content="الجوابرة للخدمات التعليمية - نقدم خدمات التسجيل في الجامعات التركية، الاستشارات التعليمية، المنح والخصومات">
+    
+    <!-- ===== Favicon ===== -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    
+    <!-- ===== Local CSS Files ===== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- ===== External Libraries & Fonts ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- ===== Animation Library ===== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <!-- ===== Progress Bar ===== -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ===== Loading Screen ===== -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <img src="assets/images/logo.png" alt="شعار الجوابرة">
+                <div class="logo-pulse"></div>
+            </div>
+            
+            <div class="loading-content">
+                <h2 class="loading-title">الجوابرة للخدمات التعليمية</h2>
+                <p class="loading-subtitle">طريقك نحو النجاح في الجامعات التركية</p>
+            </div>
+            
+            <div class="loading-animation">
+                <div class="book-loader">
+                    <div class="book">
+                        <div class="page page1"></div>
+                        <div class="page page2"></div>
+                        <div class="page page3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loading-progress">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <p class="loading-text">جاري تحضير تجربة تعليمية مميزة...</p>
+            </div>
+            
+            <div class="loading-features">
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ضمان القبول</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-percentage"></i>
+                    <span>منح تصل لـ 75%</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-university"></i>
+                    <span>50+ جامعة شريكة</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ===== Header & Navigation ===== -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <a href="#" class="logo" data-aos="fade-right">
+                <img src="assets/images/logo.png" alt="شعار الجوابرة">
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">خدماتنا</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#study-info" class="nav-link">الدراسة في تركيا</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#universities" class="nav-link">الجامعات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">اتصل بنا</a>
+                    
+                </li>
+                <li class="nav-item">
+        <a href="student/index.html" class="nav-link">
+            <i class="fas fa-user" style="margin-left: 8px;"></i> المعلومات الشخصية
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="reg-student/index.html" class="nav-link">
+            <i class="fas fa-folder-open" style="margin-left: 8px;"></i> التسجيل ومتابعة الملف
+        </a>
+    </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="live-stream-btn" id="liveStreamBtn" data-aos="fade-left">
+                    <i class="fas fa-video"></i>
+                    <span class="live-indicator"></span>
+                    البث المباشر
+                </button>
+
+                <span id="welcomeUser" class="nav-welcome" style="display:none" aria-live="polite"></span>
+  </div>
+</div>
+
+
+
+                <a id="authBtn" href="auth/index.html" class="cta-btn nav-auth" data-aos="fade-left">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </a>
+
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        </header>
+
+    <!-- ===== Live Stream Modal ===== -->
+    <div id="liveStreamModal" class="modal">
+        <div class="modal-content live-stream-modal">
+            <div class="modal-header">
+                <h3>البث المباشر - استشارة تعليمية</h3>
+                <span class="modal-close" id="liveStreamClose">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="stream-container">
+                    <div class="stream-placeholder">
+                        <div class="stream-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>البث المباشر متاح الآن!</h4>
+                        <p>انضم إلينا للحصول على استشارة تعليمية مجانية حول الدراسة في تركيا</p>
+                        <div class="stream-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>مدة البث: 30 دقيقة</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span id="viewerCount">127 مشاهد متصل</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>كل يوم من 7-9 مساءً</span>
+                            </div>
+                        </div>
+                        <div class="stream-actions">
+                            <button class="btn btn-primary" id="joinStreamBtn">
+                                <i class="fas fa-play"></i>
+                                انضم للبث المباشر
+                            </button>
+                            <button class="btn btn-secondary" id="scheduleCallBtn">
+                                <i class="fas fa-phone"></i>
+                                حجز مكالمة خاصة
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-section">
+                        <div class="chat-header">
+                            <h4>الدردشة المباشرة</h4>
+                            <span class="online-count">127 متصل</span>
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message">
+                                <span class="username">أحمد محمد</span>
+                                <span class="text">ما هي أفضل الجامعات للهندسة؟</span>
+                            </div>
+                            <div class="message">
+                                <span class="username">فاطمة علي</span>
+                                <span class="text">كم تكلفة الدراسة في إسطنبول؟</span>
+                            </div>
+                            <div class="message admin">
+                                <span class="username">مستشار الجوابرة</span>
+                                <span class="text">مرحباً بكم جميعاً! سنجيب على جميع أسئلتكم</span>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="اكتب سؤالك هنا..." id="chatInput">
+                            <button id="sendMessage">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Hero Section with Stats ===== -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                <h1 class="hero-title">
+                    <span class="title-main">الجوابرة</span>
+                    <span class="title-sub">للخدمات التعليمية</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                    طريقك نحو النجاح في الجامعات التركية
+                </p>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                    نقدم لك أفضل الخدمات التعليمية للدراسة في تركيا مع ضمان القبول الجامعي والحصول على أفضل المنح الدراسية
+                </p>
+            </div>
+            
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fas fa-graduation-cap"></i>
+                    اكتشف خدماتنا
+                </a>
+                <a href="#universities" class="btn btn-secondary">
+                    <i class="fas fa-university"></i>
+                    الجامعات المتاحة
+                </a>
+            </div>
+            
+            <div class="hero-contact" data-aos="fade-up" data-aos-delay="1000">
+                <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <span class="contact-label">تواصل معنا الآن</span>
+                        <span class="contact-desc">استشارة مجانية فورية</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="1200">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">طالب مقبول</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">جامعة شريكة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">75%</div>
+                <div class="stat-label">منح دراسية</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label">سنوات خبرة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Study in Turkey Info Section (Requirements & Costs) ===== -->
+    <section class="study-info" id="study-info">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">معلومات مهمة</span>
+                <h2 class="section-title">لماذا الدراسة في تركيا؟</h2>
+                <p class="section-description">
+                    اكتشف المزايا العديدة للدراسة في تركيا والفرص المتاحة للطلاب الدوليين
+                </p>
+            </div>
+            
+            <div class="study-info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <h3 class="info-title">موقع استراتيجي</h3>
+                    <p class="info-description">
+                        تركيا تقع بين قارتي آسيا وأوروبا، مما يوفر تجربة ثقافية فريدة وفرص تعليمية متنوعة.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="info-title">تكلفة معقولة</h3>
+                    <p class="info-description">
+                        تكاليف المعيشة والدراسة في تركيا أقل بكثير من الدول الأوروبية الأخرى مع جودة تعليم عالية.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="info-title">شهادات معترف بها</h3>
+                    <p class="info-description">
+                        الشهادات التركية معترف بها دولياً في أكثر من 100 دولة حول العالم.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="info-title">تنوع ثقافي</h3>
+                    <p class="info-description">
+                        بيئة متعددة الثقافات مع طلاب من أكثر من 150 دولة مختلفة.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="info-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="info-title">لغات متعددة</h3>
+                    <p class="info-description">
+                        إمكانية الدراسة باللغة الإنجليزية أو التركية أو العربية في العديد من التخصصات.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="info-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="info-title">فرص عمل</h3>
+                    <p class="info-description">
+                        إمكانية العمل أثناء الدراسة وفرص وظيفية ممتازة بعد التخرج في تركيا وأوروبا.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="info-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="info-title">سكن طلابي متطور</h3>
+                    <p class="info-description">
+                        سكن طلابي حديث ومجهز بكافة الخدمات مع أسعار مناسبة وأمان عالي.
+                    </p>
+                </div>
+                
+                <div class="info-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="info-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="info-title">سهولة السفر</h3>
+                    <p class="info-description">
+                        موقع تركيا المتميز يسهل السفر إلى أوروبا وآسيا والشرق الأوسط.
+                    </p>
+                </div>
+                
+            </div>
+            
+            <div class="study-stats" data-aos="fade-up" data-aos-delay="700">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">جامعة تركية</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">جامعات في أفضل 500 عالمياً</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300,000+</div>
+                    <div class="stat-label">طالب دولي</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">لغة تدريس</div>
+                </div>
+            </div>
+            
+            <!-- متطلبات الدراسة -->
+            <div class="requirements-section" data-aos="fade-up" data-aos-delay="800">
+                <h3 class="section-subtitle">متطلبات الدراسة في تركيا</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>للبكالوريوس</h4>
+                        <ul>
+                            <li>شهادة الثانوية العامة</li>
+                            <li>كشف درجات مترجم</li>
+                            <li>شهادة لغة (إن وجدت)</li>
+                            <li>صور شخصية</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>للماجستير</h4>
+                        <ul>
+                            <li>شهادة البكالوريوس</li>
+                            <li>كشف درجات مترجم</li>
+                            <li>رسالة دافع</li>
+                            <li>خطابات توصية</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-award"></i>
+                        <h4>للدكتوراه</h4>
+                        <ul>
+                            <li>شهادة الماجستير</li>
+                            <li>مقترح بحثي</li>
+                            <li>خبرة أكاديمية</li>
+                            <li>مقابلة شخصية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- تكاليف المعيشة -->
+            <div class="living-costs" data-aos="fade-up" data-aos-delay="900">
+                <h3 class="section-subtitle">تكاليف المعيشة الشهرية</h3>
+                <div class="costs-grid">
+                    <div class="cost-item">
+                        <i class="fas fa-home"></i>
+                        <span class="cost-label">السكن</span>
+                        <span class="cost-value">$200-500</span>
+                    </div>
+                    <div class="cost-item">
+                        <i class="fas fa-utensils"></i>
+                        <span class="cost-label">الطعام</span>
+                        <span class="cost-value">$150-300</span>
+                    </div>
+                    <div class="cost-item">
+                        <i class="fas fa-bus"></i>
+                        <span class="cost-label">المواصلات</span>
+                        <span class="cost-value">$30-60</span>
+                    </div>
+                    <div class="cost-item">
+                        <i class="fas fa-book"></i>
+                        <span class="cost-label">الكتب</span>
+                        <span class="cost-value">$50-100</span>
+                    </div>
+                    <div class="cost-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span class="cost-label">الترفيه</span>
+                        <span class="cost-value">$100-200</span>
+                    </div>
+                    <div class="cost-item">
+                        <i class="fas fa-calculator"></i>
+                        <span class="cost-label">المجموع</span>
+                        <span class="cost-value">$530-1160</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Universities Section ===== -->
+    <section class="universities" id="universities">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">شركاؤنا الأكاديميون</span>
+                <h2 class="section-title">الجامعات المتاحة</h2>
+                <p class="section-description">
+                    نتعاون مع أفضل الجامعات التركية لضمان حصولك على تعليم عالي الجودة
+                </p>
+            </div>
+            
+            <div class="universities-grid">
+                <!-- ===== Istanbul Aydin University ===== -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="university-image">
+                        <img src="assets/images/universities/aydin.jpg" alt="جامعة آيدن">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة إسطنبول آيدن</h3>
+                        <p class="university-description">
+                            مؤسسة تعليمية رائدة تقدم الأبحاث الأساسية والتطبيقية على مستوى عالمي، 
+                            وتهدف لتحويل المعلومات إلى منتجات تفيد المجتمع مع بنية تحتية متطورة.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$25,000</span>
+                                    <span class="new-price">$22,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$21,850</span>
+                                    <span class="new-price">$19,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">هندسة البرمجيات</span>
+                                <div class="program-price">
+                                    <span class="old-price">$5,850</span>
+                                    <span class="new-price">$5,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🏆 جامعة معتمدة</span>
+                            <span class="feature">🌍 تعاون دولي</span>
+                            <span class="feature">🔬 أبحاث متقدمة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== Uskudar University ===== -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="university-image">
+                        <img src="assets/images/universities/uskudar.jpg" alt="جامعة أسكودار">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة أسكودار</h3>
+                        <p class="university-description">
+                            جامعة رائدة عالمياً تطور برامج أكاديمية عالية الجودة وتهدف لتكون من أفضل 500 جامعة 
+                            في العالم بحلول 2023 مع التوافق مع معايير الاتحاد الأوروبي.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$20,000</span>
+                                    <span class="new-price">$18,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$18,000</span>
+                                    <span class="new-price">$16,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">هندسة الحاسوب</span>
+                                <div class="program-price">
+                                    <span class="old-price">$5,000</span>
+                                    <span class="new-price">$4,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🎓 برامج متميزة</span>
+                            <span class="feature">🇪🇺 معايير أوروبية</span>
+                            <span class="feature">📈 تصنيف عالمي</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== Nisantasi University ===== -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="university-image">
+                        <img src="assets/images/universities/nisan.jpg" alt="جامعة نيشان تاشي">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة نيشان تاشي</h3>
+                        <p class="university-description">
+                            تتبنى نموذجاً تعليمياً مفتوحاً للتعاون الدولي مع أحدث التطورات التكنولوجية 
+                            وتركز على تطوير منتجات مبتكرة وتعليم قيم ريادة الأعمال.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$14,500</span>
+                                    <span class="new-price">$12,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$17,500</span>
+                                    <span class="new-price">$15,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">هندسة البرمجيات</span>
+                                <div class="program-price">
+                                    <span class="old-price">$4,400</span>
+                                    <span class="new-price">$3,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">💡 تكنولوجيا متقدمة</span>
+                            <span class="feature">🚀 ريادة أعمال</span>
+                            <span class="feature">🤖 ذكاء اصطناعي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة إيشيك -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="university-image">
+                        <img src="assets/images/universities/isik.jpg" alt="جامعة إيشيك">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة إيشيك</h3>
+                        <p class="university-description">
+                            جامعة متميزة تركز على التعليم العملي والبحث العلمي مع برامج أكاديمية 
+                            متطورة وشراكات دولية قوية لإعداد خريجين مؤهلين لسوق العمل.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">هندسة الكمبيوتر</span>
+                                <div class="program-price">
+                                    <span class="old-price">$4,800</span>
+                                    <span class="new-price">$4,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">الهندسة المعمارية</span>
+                                <div class="program-price">
+                                    <span class="old-price">$3,600</span>
+                                    <span class="new-price">$3,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">إدارة الأعمال</span>
+                                <div class="program-price">
+                                    <span class="old-price">$3,600</span>
+                                    <span class="new-price">$3,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🎯 تعليم عملي</span>
+                            <span class="feature">🌐 شراكات دولية</span>
+                            <span class="feature">💼 إعداد مهني</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة إستينيا -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="university-image">
+                        <img src="assets/images/universities/istinye.jpg" alt="جامعة إستينيا">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة إستينيا</h3>
+                        <p class="university-description">
+                            جامعة حديثة تجمع بين التقاليد الأكاديمية والابتكار التكنولوجي، 
+                            تقدم برامج متخصصة في الطب والهندسة والعلوم الصحية بمعايير عالمية.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$26,400</span>
+                                    <span class="new-price">$24,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$22,200</span>
+                                    <span class="new-price">$20,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">هندسة الكمبيوتر</span>
+                                <div class="program-price">
+                                    <span class="old-price">$8,000</span>
+                                    <span class="new-price">$7,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🏥 تخصصات طبية</span>
+                            <span class="feature">⚙️ تكنولوجيا حديثة</span>
+                            <span class="feature">🌟 معايير عالمية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة كينت -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="university-image">
+                        <img src="assets/images/universities/kent.jpg" alt="جامعة كينت">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة كينت</h3>
+                        <p class="university-description">
+                            جامعة متطورة تركز على التميز الأكاديمي والبحث العلمي، 
+                            تقدم برامج متنوعة في العلوم الصحية والإدارية بأسعار مناسبة.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$15,000</span>
+                                    <span class="new-price">$12,500</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">إدارة الأعمال</span>
+                                <div class="program-price">
+                                    <span class="old-price">$6,000</span>
+                                    <span class="new-price">$5,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">العلاج الطبيعي</span>
+                                <div class="program-price">
+                                    <span class="old-price">$4,400</span>
+                                    <span class="new-price">$3,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">💰 أسعار مناسبة</span>
+                            <span class="feature">🎓 تميز أكاديمي</span>
+                            <span class="feature">🔬 بحث علمي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة آلتن باش -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="university-image">
+                        <img src="assets/images/universities/altinbas.jpeg" alt="جامعة آلتن باش">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة آلتن باش</h3>
+                        <p class="university-description">
+                            جامعة عريقة تجمع بين التراث الأكاديمي والحداثة، تقدم برامج متميزة 
+                            في الطب والهندسة والعلوم الإدارية مع تركيز على الجودة والتميز.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$21,000</span>
+                                    <span class="new-price">$19,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$16,000</span>
+                                    <span class="new-price">$14,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">الصيدلة</span>
+                                <div class="program-price">
+                                    <span class="old-price">$11,000</span>
+                                    <span class="new-price">$9,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🏛️ تراث أكاديمي</span>
+                            <span class="feature">⭐ جودة وتميز</span>
+                            <span class="feature">🎯 برامج متخصصة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة أطلس -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="university-image">
+                        <img src="assets/images/universities/atlas.jpg" alt="جامعة أطلس">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة أطلس</h3>
+                        <p class="university-description">
+                            جامعة حديثة تركز على الابتكار والتطوير، تقدم برامج متطورة 
+                            في الطب والهندسة والعلوم الصحية مع مرافق تعليمية متقدمة.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$18,630</span>
+                                    <span class="new-price">$17,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$18,030</span>
+                                    <span class="new-price">$16,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">هندسة الحاسوب</span>
+                                <div class="program-price">
+                                    <span class="old-price">$4,500</span>
+                                    <span class="new-price">$3,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🚀 ابتكار وتطوير</span>
+                            <span class="feature">🏢 مرافق متقدمة</span>
+                            <span class="feature">💡 برامج حديثة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- جامعة ميديبول -->
+                <div class="university-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="university-image">
+                        <img src="assets/images/universities/medipol.jpg" alt="جامعة ميديبول">
+                        <div class="university-overlay">
+                            <a href="universities/index.html" class="university-btn">
+                                للمزيد من التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                    <div class="university-content">
+                        <h3 class="university-name">جامعة ميديبول</h3>
+                        <p class="university-description">
+                            جامعة رائدة في التعليم الطبي والصحي، تضم مستشفى جامعي متطور 
+                            وتقدم برامج طبية متميزة مع تدريب عملي في بيئة طبية حقيقية.
+                        </p>
+                        <div class="university-programs">
+                            <div class="program-item">
+                                <span class="program-name">الطب البشري</span>
+                                <div class="program-price">
+                                    <span class="old-price">$39,600</span>
+                                    <span class="new-price">$35,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">طب الأسنان</span>
+                                <div class="program-price">
+                                    <span class="old-price">$32,400</span>
+                                    <span class="new-price">$28,000</span>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <span class="program-name">الصيدلة</span>
+                                <div class="program-price">
+                                    <span class="old-price">$15,000</span>
+                                    <span class="new-price">$13,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="university-features">
+                            <span class="feature">🏥 مستشفى جامعي</span>
+                            <span class="feature">⚕️ تعليم طبي متميز</span>
+                            <span class="feature">🔬 تدريب عملي</span>
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div class="universities-cta" data-aos="fade-up" data-aos-delay="500">
+                <a href="universities/index.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-university"></i>
+                    اكتشف المزيد من الجامعات
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Hero Section with Search & Filters ===== -->
+        <div class="hero-content">
+            <h1 data-aos="fade-up">ابحث عن تخصصك خلال دقيقة</h1>
+            <p data-aos="fade-up" data-aos-delay="100">اختر الدرجة واللغة والتخصص — وسنقترح عليك أنسب الخيارات ونجهز ملف التقديم.</p>
+        </div>
+        
+        <!-- Search Widget -->
+        <div class="search-widget" id="search-section" data-aos="fade-up" data-aos-delay="200">
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>الدرجة</label>
+                    <select id="degreeFilter">
+                        <option value="">اختر</option>
+                        <option value="1">بكالوريوس</option>
+                        <option value="2">ماجستير</option>
+                        <option value="3">دكتوراه</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>لغة الدراسة</label>
+                    <select id="languageFilter">
+                        <option value="">اختر</option>
+                        <option value="1">التركية</option>
+                        <option value="2">الإنجليزية</option>
+                        <option value="3">العربية</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>التخصص</label>
+                    <select id="programFilter">
+                        <option value="">اختر التخصص</option>
+                        <optgroup label="التخصصات الطبية">
+                            <option value="1">الطب البشري</option>
+                            <option value="2">طب الأسنان</option>
+                            <option value="3">الصيدلة</option>
+                            <option value="4">التمريض</option>
+                            <option value="5">العلاج الطبيعي وإعادة التأهيل</option>
+                            <option value="6">التغذية والحمية</option>
+                            <option value="7">إدارة الصحة</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الهندسية">
+                            <option value="10">هندسة الحاسوب</option>
+                            <option value="11">هندسة البرمجيات</option>
+                            <option value="12">هندسة الذكاء الاصطناعي</option>
+                            <option value="13">الهندسة الكهربائية والإلكترونية</option>
+                            <option value="14">الهندسة الميكانيكية</option>
+                            <option value="15">الهندسة المدنية</option>
+                            <option value="16">الهندسة المعمارية</option>
+                            <option value="17">هندسة الميكاترونكس</option>
+                            <option value="18">الهندسة الصناعية</option>
+                            <option value="19">الهندسة الطبية الحيوية</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الإدارية">
+                            <option value="21">إدارة الأعمال</option>
+                            <option value="22">الاقتصاد</option>
+                            <option value="23">التجارة الدولية</option>
+                            <option value="24">المحاسبة والمالية</option>
+                            <option value="25">العلوم السياسية والعلاقات الدولية</option>
+                            <option value="26">الحقوق</option>
+                            <option value="27">إدارة اللوجستيات</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الإنسانية">
+                            <option value="29">علم النفس</option>
+                            <option value="30">علم الاجتماع</option>
+                            <option value="31">الترجمة والترجمة الفورية</option>
+                            <option value="32">اللغة الإنجليزية وآدابها</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الفنية">
+                            <option value="33">التصميم الداخلي</option>
+                            <option value="34">التصميم الجرافيكي</option>
+                            <option value="35">السينما والتلفزيون</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>المدينة (اختياري)</label>
+                    <input type="text" id="cityFilter" placeholder="مثال: إسطنبول، أنقرة">
+                </div>
+            </div>
+            
+           <div class="search-actions">
+  <a class="btn-primary" href="universities/index.html?tab=search&auto=1">
+    <i class="fas fa-search"></i>
+    اعرض الخيارات
+  </a>
+
+  <a class="btn-secondary" href="universities/index.html?tab=browse&auto=1">
+    <i class="fas fa-university"></i>
+    تصفح الجامعات
+  </a>
+</div>
+
+            
+            <div class="privacy-note">
+                <i class="fas fa-shield-alt"></i>
+                بياناتك سرية — نستخدمها فقط لتجهيز ملف التقديم والتواصل معك.
+            </div>
+        </div>
+    </section>
+
+      <!-- ===== Services Section ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">خدماتنا المميزة</span>
+                <h2 class="section-title">لماذا تختار الجوابرة؟</h2>
+                <p class="section-description">
+                    نقدم مجموعة شاملة من الخدمات التعليمية المتميزة لضمان نجاحك في رحلتك الأكاديمية
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">تسجيل الجامعات</h3>
+                        <div class="service-price">
+                            <span class="price-label">أسعار تبدأ من</span>
+                            <span class="price-value">$1000</span>
+                        </div>
+                        <p class="service-description">
+                            نوفر قبولات جامعية للبكالوريوس والدراسات العليا بشكل سريع وذكي ومبسط. 
+                            كل ما عليك سوى تعبئة الطلب وإرفاق بياناتك وستحصل على قبول جامعي مناسب خلال أقل من أسبوع.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ ضمان القبول</span>
+                            <span class="feature">✓ خلال أسبوع</span>
+                            <span class="feature">✓ جميع التخصصات</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">الاستشارات التعليمية</h3>
+                        <div class="service-price">
+                            <span class="price-label">استشارة</span>
+                            <span class="price-value">مجانية</span>
+                        </div>
+                        <p class="service-description">
+                            نقدم استشارات طلابية مجانية وشاملة على مدار فترة دراستكم، بما يشمل اختيار التخصص المناسب، 
+                            التعامل مع تحديات الدراسة، وتطوير مهارات الدراسة والبحث.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ استشارة مجانية</span>
+                            <span class="feature">✓ متابعة مستمرة</span>
+                            <span class="feature">✓ خبراء متخصصون</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">منح وخصومات</h3>
+                        <div class="service-price">
+                            <span class="price-label">منح تصل حتى</span>
+                            <span class="price-value">75%</span>
+                        </div>
+                        <p class="service-description">
+                            نقدم فرصاً حقيقية للحصول على منح تصل إلى 75% من تكلفة الدراسة في جامعات مرموقة 
+                            وفي تخصصات متميزة مع ضمان الدعم والإرشاد طوال مسيرتك الأكاديمية.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ منح مضمونة</span>
+                            <span class="feature">✓ جامعات مرموقة</span>
+                            <span class="feature">✓ جميع التخصصات</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">السكن الطلابي</h3>
+                        <div class="service-price">
+                            <span class="price-label">سكن</span>
+                            <span class="price-value">مضمون</span>
+                        </div>
+                        <p class="service-description">
+                            نوفر السكن المناسب أثناء فترة الإقامة الدراسية في تركيا من خلال شراكاتنا 
+                            مع مجموعة متنوعة من مقدمي السكن لضمان تجربة إقامة مميزة.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ سكن آمن</span>
+                            <span class="feature">✓ أسعار مناسبة</span>
+                            <span class="feature">✓ مواقع متميزة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">استقبال المطار</h3>
+                        <div class="service-price">
+                            <span class="price-label">خدمة</span>
+                            <span class="price-value">موجودة</span>
+                        </div>
+                        <p class="service-description">
+                            نقدم خدمة استقبال مطارية تتيح للطلاب بداية مريحة وسلسة لرحلتهم التعليمية. 
+                            فريقنا سيكون في المطار لاستقبالكم ونقلكم بأمان إلى مكان إقامتكم الجديد.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ من المطار الى الفندق</span>
+                            <span class="feature">✓ نقل آمن</span>
+                            <span class="feature">✓ مرافقة كاملة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">جولة ترفيهية</h3>
+                        <div class="service-price">
+                            <span class="price-label">جولة</span>
+                            <span class="price-value">رائعة</span>
+                        </div>
+                        <p class="service-description">
+                            نقدم جولة سياحية في إسطنبول لتعريفكم بأبرز المعالم وسبل التنقل في المدينة 
+                            مع مرافقة دليل محلي وإرشادات حول استخدام وسائل النقل المختلفة.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature">✓ دليل محلي</span>
+                            <span class="feature">✓ أهم المعالم</span>
+                            <span class="feature">✓ نصائح عملية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section (Frequently Asked Questions) ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">الأسئلة الشائعة</span>
+                <h2 class="section-title">إجابات على أهم الأسئلة</h2>
+                <p class="section-description">
+                    نجيب على أكثر الأسئلة شيوعاً حول الدراسة في تركيا والخدمات التي نقدمها
+                </p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h3>ما هي متطلبات الدراسة في الجامعات التركية؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>للبكالوريوس: شهادة الثانوية العامة بمعدل لا يقل عن 50%، جواز سفر ساري المفعول، صور شخصية، وشهادة لغة إنجليزية أو تركية (اختيارية). للماجستير: شهادة البكالوريوس، كشف درجات، رسالة دافع، وخطابات توصية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h3>كم تبلغ تكاليف الدراسة والمعيشة في تركيا؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تتراوح الرسوم الدراسية من 3,000 إلى 25,000 دولار سنوياً حسب التخصص والجامعة. تكاليف المعيشة الشهرية تتراوح بين 400-800 دولار شاملة السكن والطعام والمواصلات.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h3>هل يمكنني الحصول على منحة دراسية؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نوفر منح دراسية تصل إلى 75% من الرسوم الدراسية في الجامعات الشريكة. كما تتوفر منح حكومية تركية ومنح خاصة من الجامعات حسب التفوق الأكاديمي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">
+                        <h3>كم يستغرق الحصول على القبول الجامعي؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>عادة ما يستغرق الحصول على القبول من 3-7 أيام عمل بعد تقديم الأوراق كاملة. نحن نضمن الحصول على القبول في إحدى الجامعات الشريكة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-question">
+                        <h3>هل تقدمون خدمات السكن الطلابي؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نوفر خيارات متنوعة للسكن الطلابي تشمل السكن الجامعي والشقق المشتركة والسكن الخاص. جميع خيارات السكن آمنة ومجهزة بالكامل.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="faq-question">
+                        <h3>هل يمكنني العمل أثناء الدراسة في تركيا؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يُسمح للطلاب الدوليين بالعمل بدوام جزئي (24 ساعة أسبوعياً) بعد الحصول على تصريح عمل. كما يمكن العمل بدوام كامل خلال العطل الصيفية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="faq-question">
+                        <h3>ما هي لغات التدريس في الجامعات التركية؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تتوفر برامج باللغة التركية والإنجليزية والعربية. معظم الجامعات تقدم برامج باللغة الإنجليزية خاصة في التخصصات الطبية والهندسية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
+                    <div class="faq-question">
+                        <h3>هل الشهادات التركية معترف بها دولياً؟</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، الشهادات التركية معترف بها في أكثر من 100 دولة حول العالم، بما في ذلك الدول العربية وأوروبا وأمريكا. كما أن تركيا عضو في اتفاقية بولونيا للتعليم العالي.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta" data-aos="fade-up" data-aos-delay="900">
+                <p>لديك سؤال آخر؟</p>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-question-circle"></i>
+                    اسأل خبراءنا
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== About Section ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <span class="section-subtitle">من نحن</span>
+                    <h2 class="section-title">فريق الجوابرة للخدمات التعليمية</h2>
+                    <p class="about-description">
+                        نعمل بتفانٍ لتقديم تجربة تعليمية مميزة تساعد طلابنا على بناء مستقبلهم. 
+                        نتشرف بزيارتكم ونسعد بتقديم الدعم والإرشاد لكم في رحلتكم التعليمية. 
+                        معاً نسعى لتحقيق التميز والنجاح. نحن هنا لخدمتكم.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>خبرة أكثر من 5 سنوات في التعليم التركي</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>فريق متخصص من الخبراء التعليميين</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>شراكات مع أفضل الجامعات التركية</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>متابعة مستمرة للطلاب حتى التخرج</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary">تواصل معنا</a>
+                        <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i>
+                            واتساب
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-image" data-aos="fade-left">
+    <div class="image-wrapper">
+           <video controls style="width: 100%; height: auto;">
+            <source src="assets/video/we.mp4" type="video/mp4">
+            متصفحك لا يدعم وسم الفيديو.
+        </video>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">تواصل معنا</span>
+                <h2 class="section-title">ابدأ رحلتك التعليمية اليوم</h2>
+                <p class="section-description">
+                    نحن هنا لمساعدتك في كل خطوة من رحلتك التعليمية
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>اتصل بنا</h4>
+                            <p>متاح 24/7 للرد على استفساراتك</p>
+                            <a href="tel:+905555555555">+90 5528967485</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>راسلنا</h4>
+                            <p>سنرد عليك في أقرب وقت ممكن</p>
+                            <a href="mailto:aljawabreh.edu@gmail.com">aljawabreh.edu@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>واتساب</h4>
+                            <p>تواصل فوري ومباشر</p>
+                            <a href="https://wa.me/message/EUGNIXH6NHRZL1">إرسال رسالة</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>تابعنا على</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100086928950629" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:aljawabreh.edu@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+<form id="contactForm"
+      action="https://formsubmit.co/maherjawabreh97@gmail.com"
+      method="POST"
+      class="form">
+
+  <input type="hidden" name="_subject" value="📩 رسالة جديدة من موقع الجوابرة">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="text" name="_honey" style="display:none">
+
+  <div class="form-group">
+    <label for="name">الاسم الكامل</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">البريد الإلكتروني</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">رقم الهاتف</label>
+    <input type="tel" id="phone" name="phone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">الموضوع</label>
+    <select id="subject" name="subject" required>
+      <option value="">اختر الموضوع</option>
+      <option value="university-registration">تسجيل جامعي</option>
+      <option value="consultation">استشارة تعليمية</option>
+      <option value="scholarship">منحة دراسية</option>
+      <option value="accommodation">السكن</option>
+      <option value="other">أخرى</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="message">رسالتك</label>
+    <textarea id="message" name="message" rows="5" required placeholder="اكتب رسالتك هنا..."></textarea>
+  </div>
+
+  <button id="contactSubmitBtn" type="submit" class="btn btn-primary btn-full">
+    <i class="fas fa-paper-plane"></i>
+    <span>إرسال الرسالة</span>
+  </button>
+
+<p style="font-size:12px;color:#6b7280;margin-top:10px;line-height:1.9;">
+بالضغط على "إرسال" أنت توافق على
+<a href="pages/legal/terms.html">الشروط والأحكام</a>
+و
+<a href="pages/legal/privacy.html">سياسة الخصوصية</a>.
+</p>
+</form>
+
+<script>
+  (function () {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+
+    const btn = document.getElementById("contactSubmitBtn");
+    let sending = false;
+
+    function setLoading(on){
+      if(!btn) return;
+      sending = on;
+      btn.disabled = on;
+      const icon = btn.querySelector("i");
+      const text = btn.querySelector("span");
+      if(icon) icon.className = on ? "fas fa-spinner fa-spin" : "fas fa-paper-plane";
+      if(text) text.textContent = on ? "جاري الإرسال..." : "إرسال الرسالة";
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (sending) return;
+
+      // ✅ اجمع البيانات
+      const name = form.querySelector("#name").value.trim();
+      const email = form.querySelector("#email").value.trim();
+      const phone = form.querySelector("#phone").value.trim();
+      const subject = form.querySelector("#subject").value;
+      const message = form.querySelector("#message").value.trim();
+
+      if(!name || !email || !phone || !subject || !message){
+        alert("عبّي كل الحقول المطلوبة.");
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/aljawabreh.edu@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            subject,
+            message,
+            sent_at: new Date().toISOString(),
+            _subject: "📩 رسالة جديدة من موقع الجوابرة",
+            _template: "table",
+            _captcha: "true",
+            _honey: ""
+          })
+        });
+
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        // ✅ نجاح
+        window.location.href = "thanks/index.html";
+      } catch (err) {
+        console.error(err);
+        alert("صار خطأ بالإرسال. جرّب مرة ثانية.");
+        setLoading(false);
+
+        // ✅ كخطة احتياط: جرّب الإرسال العادي
+        // form.submit();
+      }
+    });
+  })();
+</script>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="شعار الجوابرة">
+                        <h3>الجوابرة للخدمات التعليمية</h3>
+                    </div>
+                    <p class="footer-description">
+                        نعمل بتفانٍ لتقديم تجربة تعليمية مميزة تساعد طلابنا على بناء مستقبلهم. 
+                        معاً نسعى لتحقيق التميز والنجاح.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100086928950629" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:aljawabreh.edu@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#universities">الجامعات</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    
+<li><a href="pages/legal/privacy.html">سياسة الخصوصية</a></li>
+<li><a href="pages/legal/terms.html">الشروط والأحكام</a></li>
+<li><a href="pages/legal/data-protection.html">حماية البيانات</a></li>
+</ul>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-title">خدماتنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">تسجيل الجامعات</a></li>
+                        <li><a href="#services">الاستشارات التعليمية</a></li>
+                        <li><a href="#services">المنح والخصومات</a></li>
+                        <li><a href="#services">السكن الطلابي</a></li>
+                        <li><a href="#services">استقبال المطار</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="footer-title">اشترك في النشرة الإخبارية</h4>
+                    <p class="newsletter-description">
+                        احصل على آخر الأخبار والعروض التعليمية
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                            <button type="submit">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 جميع الحقوق محفوظة لدى الجوابرة للخدمات التعليمية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WhatsApp Floating Button ===== -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/message/EUGNIXH6NHRZL1" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- ===== External Scripts ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/scriptt.js"></script>
+    <script type="module" src="assets/js/navbar-auth.js"></script>
+
+    <!-- ===== Lead Nudge Widget (Auto Login Suggestion) ===== -->
+<div class="lead-nudge" id="leadNudge" aria-live="polite">
+  <!-- Bubble (hidden by default) -->
+  <div class="lead-nudge__bubble" id="leadNudgeBubble"
+       role="dialog" aria-label="دعوة لتسجيل الدخول"
+       aria-hidden="true">
+    <button class="lead-nudge__close" id="leadNudgeClose" aria-label="إغلاق">×</button>
+
+    <div class="lead-nudge__title">👨‍💻🤓 محتاج مساعدة سريعة؟</div>
+    <div class="lead-nudge__text">
+      سجّل دخول الآن عشان نبدأ نجهّز لك الخيارات المناسبة حسب معلوماتك.
+    </div>
+
+    <div class="lead-nudge__actions">
+      <a class="lead-nudge__btn" href="auth/index.html" id="leadNudgeLogin">تسجيل الدخول</a>
+    </div>
+
+    <div class="lead-nudge__hint">* عملية بسيطة وسريعة</div>
+  </div>
+
+  <!-- FAB -->
+  <button class="lead-nudge__fab" id="leadNudgeFab" aria-label="فتح رسالة المساعدة">
+    <span class="lead-nudge__icon">👨‍💻</span>
+  </button>
+</div>
+
+<style>
+  .lead-nudge{
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ✅ الأيقونة على اليسار */
+    direction: ltr;
+
+    font-family: system-ui, -apple-system, "Cairo", Arial, sans-serif;
+  }
+
+  /* bubble closed by default */
+  .lead-nudge__bubble{
+    width: min(340px, calc(100vw - 36px));
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0,0,0,.18);
+    padding: 14px 14px 12px;
+    margin-bottom: 12px;
+    position: relative;
+
+    direction: rtl;
+    text-align: right;
+
+    /* ✅ مخفية بالبداية */
+    opacity: 0;
+    transform: translateY(14px) scale(.98);
+    pointer-events: none;
+    visibility: hidden;
+
+    transition: opacity .28s ease, transform .28s ease, visibility 0s linear .28s;
+  }
+
+  /* Tail */
+  .lead-nudge__bubble::after{
+    content:"";
+    position:absolute;
+    left: 22px;
+    bottom: -10px;
+    width: 18px;
+    height: 18px;
+    background: #1d4ed8;
+    border-left: 1px solid rgba(255,255,255,.18);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+    transform: rotate(-45deg);
+  }
+
+  /* ✅ open state ONLY when .is-open exists */
+  .lead-nudge__bubble.is-open{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity .28s ease, transform .28s cubic-bezier(.2,.9,.2,1), visibility 0s;
+  }
+
+  .lead-nudge__close{
+    position:absolute;
+    left: 10px;
+    top: 8px;
+    border: 0;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+  .lead-nudge__close:hover{ background: rgba(255,255,255,.22); }
+
+  .lead-nudge__title{
+    font-weight: 900;
+    font-size: 15.5px;
+    margin: 2px 0 6px;
+  }
+
+  .lead-nudge__text{
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: rgba(255,255,255,.95);
+  }
+
+  .lead-nudge__actions{ display:flex; }
+
+  .lead-nudge__btn{
+    flex: 1;
+    text-align:center;
+    text-decoration:none;
+    font-weight: 900;
+    border-radius: 12px;
+    padding: 11px 12px;
+    font-size: 13.5px;
+    background: #ffffff;
+    color: #1d4ed8;
+    border: 1px solid rgba(255,255,255,.2);
+    transition: .2s ease;
+  }
+  .lead-nudge__btn:hover{ transform: translateY(-1px); }
+
+  .lead-nudge__hint{
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,.85);
+  }
+
+  /* FAB */
+  .lead-nudge__fab{
+    width: 58px;
+    height: 58px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    background: #1d4ed8;
+    box-shadow: 0 16px 40px rgba(37,99,235,.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left: 0;
+    margin-right: auto;  /* ✅ يثبتها يسار */
+    position: relative;
+    transition: .2s ease;
+    float: none !important;
+  }
+  .lead-nudge__fab:hover{ transform: translateY(-1px); }
+
+  .lead-nudge__fab::before{
+    content:"";
+    position:absolute;
+    inset: -8px;
+    border-radius: 999px;
+    border: 2px solid rgba(255,255,255,.25);
+    animation: nudgePulse 1.6s ease-out infinite;
+  }
+
+  .lead-nudge__icon{
+    font-size: 24px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,.18));
+  }
+
+  @keyframes nudgePulse{
+    0%{ transform: scale(.85); opacity: .9; }
+    100%{ transform: scale(1.2); opacity: 0; }
+  }
+
+  @media (max-width: 420px){
+    .lead-nudge{ left: 12px; bottom: 12px; }
+    .lead-nudge__fab{ width: 54px; height: 54px; }
+  }
+</style>
+
+<script type="module">
+  (async function(){
+    const root   = document.getElementById("leadNudge");
+    const bubble = document.getElementById("leadNudgeBubble");
+    const closeBtn = document.getElementById("leadNudgeClose");
+    const fab = document.getElementById("leadNudgeFab");
+
+    const OPEN_DELAY_MS = 5000;
+    let openedOnce = false;
+
+    // ===== get supabase instance =====
+    let supabase = null;
+    try {
+      // ✅ غيّر المسار إذا عندك مختلف
+      const mod = await import("./assets/js/supabaseClient.js");
+      supabase = mod.supabase || mod.default;
+    } catch (e) {
+      supabase = window.supabase || null;
+    }
+
+    function removeWidget(){
+      if(root) root.remove();
+    }
+
+    function openBubble(){
+      if(openedOnce) return;
+      openedOnce = true;
+      bubble.classList.add("is-open");
+      bubble.setAttribute("aria-hidden", "false");
+    }
+
+    function closeBubble(){
+      bubble.classList.remove("is-open");
+      bubble.setAttribute("aria-hidden", "true");
+      openedOnce = true; // ما ترجع تفتح تلقائي
+    }
+
+    async function isLoggedIn(){
+      if(!supabase?.auth?.getSession) return false;
+      const { data } = await supabase.auth.getSession();
+      return !!data?.session;
+    }
+
+    // ✅ إذا مسجل دخول: احذف الويدجت فورًا (قبل ما يفتح)
+    if(await isLoggedIn()){
+      removeWidget();
+      return;
+    }
+
+    // ✅ إذا مش مسجل: افتح بعد 5 ثواني
+    function startTimer(){
+  setTimeout(openBubble, OPEN_DELAY_MS); // 5000ms
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startTimer);
+} else {
+  startTimer(); // إذا الصفحة كانت جاهزة أصلاً
+}
+
+
+    // إذا سجل دخول وهو بالصفحة: اختفي فورًا
+    if(supabase?.auth?.onAuthStateChange){
+      supabase.auth.onAuthStateChange((_event, session) => {
+        if(session) removeWidget();
+      });
+    }
+
+    closeBtn?.addEventListener("click", closeBubble);
+
+    fab?.addEventListener("click", () => {
+      bubble.classList.add("is-open");
+      bubble.setAttribute("aria-hidden", "false");
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeBubble();
+    });
+  })();
+</script>
+
+
+</body>
+</html>
+

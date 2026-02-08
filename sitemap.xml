@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- عدّل YOUR-SITE-URL بعد ما يصير عندك رابط نهائي -->
+  <url>
+    <loc>https://YOUR-SITE-URL/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url><loc>https://YOUR-SITE-URL/index.html</loc></url>
+  <url><loc>https://YOUR-SITE-URL/pages/legal/privacy.html</loc></url>
+  <url><loc>https://YOUR-SITE-URL/pages/legal/terms.html</loc></url>
+  <url><loc>https://YOUR-SITE-URL/pages/legal/data-protection.html</loc></url>
+</urlset>

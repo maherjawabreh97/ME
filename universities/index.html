@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجوابرة للخدمات التعليمية - الجامعات التركية الخاصة</title>
+
+    <!-- Program styles (keep) -->
+    <link rel="stylesheet" href="merged-styles.css">
+
+    <!-- ✅ Main site styles (for same navbar/footer look as privacy/index) -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Fonts (same as privacy) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../assets/images/logo.png" alt="شعار الجوابرة">
+    </a>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item"><a href="../index.html#home" class="nav-link">الرئيسية</a></li>
+      <li class="nav-item"><a href="../index.html#services" class="nav-link">خدماتنا</a></li>
+      <li class="nav-item"><a href="../index.html#universities" class="nav-link">الجامعات</a></li>
+      <li class="nav-item"><a href="../index.html#contact" class="nav-link">اتصل بنا</a></li>
+      <li class="nav-item"><a href="../pages/legal/privacy.html" class="nav-link">الخصوصية</a></li>
+      <li class="nav-item"><a href="../pages/legal/terms.html" class="nav-link">الشروط</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a id="authBtn" href="../auth/index.html" class="cta-btn nav-auth">
+        <i class="fas fa-sign-in-alt"></i>
+        تسجيل الدخول
+      </a>
+
+      <div class="hamburger" id="hamburger" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">ابحث عن تخصصك خلال دقيقة</h1>
+            <p data-aos="fade-up" data-aos-delay="100">اختر الدرجة واللغة والتخصص — وسنقترح عليك أنسب الخيارات ونجهز ملف التقديم.</p>
+        </div>
+        
+        <!-- Search Widget -->
+        <div class="search-widget" id="search-section" data-aos="fade-up" data-aos-delay="200">
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>الدرجة</label>
+                    <select id="degreeFilter">
+                        <option value="">اختر</option>
+                        <option value="1">بكالوريوس</option>
+                        <option value="2">ماجستير</option>
+                        <option value="3">دكتوراه</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>لغة الدراسة</label>
+                    <select id="languageFilter">
+                        <option value="">اختر</option>
+                        <option value="1">التركية</option>
+                        <option value="2">الإنجليزية</option>
+                        <option value="3">العربية</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>التخصص</label>
+                    <select id="programFilter">
+                        <option value="">اختر التخصص</option>
+                        <optgroup label="التخصصات الطبية">
+                            <option value="1">الطب البشري</option>
+                            <option value="2">طب الأسنان</option>
+                            <option value="3">الصيدلة</option>
+                            <option value="4">التمريض</option>
+                            <option value="5">العلاج الطبيعي وإعادة التأهيل</option>
+                            <option value="6">التغذية والحمية</option>
+                            <option value="7">إدارة الصحة</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الهندسية">
+                            <option value="10">هندسة الحاسوب</option>
+                            <option value="11">هندسة البرمجيات</option>
+                            <option value="12">هندسة الذكاء الاصطناعي</option>
+                            <option value="13">الهندسة الكهربائية والإلكترونية</option>
+                            <option value="14">الهندسة الميكانيكية</option>
+                            <option value="15">الهندسة المدنية</option>
+                            <option value="16">الهندسة المعمارية</option>
+                            <option value="17">هندسة الميكاترونكس</option>
+                            <option value="18">الهندسة الصناعية</option>
+                            <option value="19">الهندسة الطبية الحيوية</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الإدارية">
+                            <option value="21">إدارة الأعمال</option>
+                            <option value="22">الاقتصاد</option>
+                            <option value="23">التجارة الدولية</option>
+                            <option value="24">المحاسبة والمالية</option>
+                            <option value="25">العلوم السياسية والعلاقات الدولية</option>
+                            <option value="26">الحقوق</option>
+                            <option value="27">إدارة اللوجستيات</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الإنسانية">
+                            <option value="29">علم النفس</option>
+                            <option value="30">علم الاجتماع</option>
+                            <option value="31">الترجمة والترجمة الفورية</option>
+                            <option value="32">اللغة الإنجليزية وآدابها</option>
+                        </optgroup>
+                        <optgroup label="التخصصات الفنية">
+                            <option value="33">التصميم الداخلي</option>
+                            <option value="34">التصميم الجرافيكي</option>
+                            <option value="35">السينما والتلفزيون</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>المدينة (اختياري)</label>
+                    <input type="text" id="cityFilter" placeholder="مثال: إسطنبول، أنقرة">
+                </div>
+            </div>
+            
+            <div class="search-actions">
+  <button type="button" class="btn-primary" id="searchBtn">
+    <i class="fas fa-search"></i>
+    اعرض الخيارات
+  </button>
+
+  <button type="button" class="btn-secondary" id="browseBtn">
+    <i class="fas fa-university"></i>
+    تصفح الجامعات
+  </button>
+</div>
+            
+            <div class="privacy-note">
+                <i class="fas fa-shield-alt"></i>
+                بياناتك سرية — نستخدمها فقط لتجهيز ملف التقديم والتواصل معك.
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="results-container">
+            <div class="results-header">
+                <h2>نتائج البحث</h2>
+                <span class="results-count" id="resultsCount">0 نتيجة</span>
+                <button class="btn-back" id="backToSearch">
+                    <i class="fas fa-arrow-right"></i>
+                    العودة للبحث
+                </button>
+            </div>
+            <div class="results-table-container">
+                <table class="results-table" id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>الجامعة</th>
+                            <th>التخصص</th>
+                            <th>المدينة</th>
+                            <th>اللغة</th>
+                            <th>القسط السنوي</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universities Section -->
+    <section class="universities-page-wrapper" id="universities">
+        <div class="universities-container">
+            <h2 class="page-title" data-aos="fade-up">الجامعات الخاصة في تركيا</h2>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">اكتشف أفضل الجامعات الخاصة في تركيا مع عروض حصرية وخصومات تصل إلى 75%</p>
+            
+            <!-- University Search -->
+            <div class="university-search-box" data-aos="fade-up" data-aos-delay="150">
+                <i class="fas fa-search"></i>
+                <input type="text" id="universitySearchInput" placeholder="ابحث عن جامعة...">
+            </div>
+            
+            <!-- Universities Grid -->
+            <div class="universities-grid" id="universitiesGrid">
+                <!-- البطاقات ستظهر هنا ديناميكياً -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination-container" id="paginationContainer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>الجوابرة للخدمات التعليمية</h3>
+                    </div>
+                    <p class="footer-description">
+                        نعمل بتفانٍ لتقديم تجربة تعليمية مميزة تساعد طلابنا على بناء مستقبلهم. 
+                        معاً نسعى لتحقيق التميز والنجاح.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100086928950629" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/message/EUGNIXH6NHRZL1" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:aljawabreh.edu@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#search-section">البحث عن تخصص</a></li>
+                        <li><a href="#universities">الجامعات</a></li>
+                    
+<li><a href="../pages/legal/privacy.html">سياسة الخصوصية</a></li>
+<li><a href="../pages/legal/terms.html">الشروط والأحكام</a></li>
+<li><a href="../pages/legal/data-protection.html">حماية البيانات</a></li>
+</ul>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-title">خدماتنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">تسجيل الجامعات</a></li>
+                        <li><a href="#">الاستشارات التعليمية</a></li>
+                        <li><a href="#">المنح والخصومات</a></li>
+                        <li><a href="#">السكن الطلابي</a></li>
+                        <li><a href="#">استقبال المطار</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp"></i> واتساب: التسجيل الآن</p>
+                        <p><i class="fas fa-envelope"></i> aljawabreh.edu@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 جميع الحقوق محفوظة لدى الجوابرة للخدمات التعليمية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="merged-data-100.js"></script>
+    <script src="merged-app.js"></script>
+    <script>
+        // تهيئة مكتبة AOS للتأثيرات
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+
+    <script type="module" src="../assets/js/navbar-auth.js"></script>
+</body>
+</html>

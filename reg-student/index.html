@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="auth-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة الطالب</title>
+
+  
+
+  <!-- CSS Files (same as index) -->
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- Main site styles (Navbar + Footer + base) -->
+  
+  <!-- Icons (same as main page) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- (Optional) Cairo font (already in styles.css, but keep for reliability) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Dashboard Theme Overrides (keeps main navbar/footer intact) ===== */
+    :root{
+      --primary:#4531ab;
+      --primary2:#6a5cff;
+
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#14131a;
+      --muted:#6b6b7a;
+      --border:#e9e9f2;
+
+      --ok:#14b86a;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+
+      --radius:16px;
+      --shadow: 0 12px 30px rgba(17, 24, 39, .08);
+    }
+
+    body{
+      margin:0; 
+      padding: 5px 5px 0 5px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Cairo", var(--font-primary), system-ui, -apple-system, Segoe UI, Tahoma, Arial;
+      font-size: 15px;
+      padding-top: 92px; /* header is fixed */
+    }
+
+    /* small improvements to main navbar buttons on dashboard */
+    .nav-welcome{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(69,49,171,.08);
+      border: 1px solid rgba(69,49,171,.16);
+      color: #2d2484;
+      font-weight: 800;
+      font-size: 12px;
+      line-height: 1;
+    }
+    .nav-dashboard, .nav-auth{
+      border-radius: 999px !important;
+      padding: 10px 14px !important;
+      gap: 10px !important;
+      font-weight: 900 !important;
+      font-size: 13px !important;
+      white-space: nowrap;
+    }
+    .nav-auth{
+      background: linear-gradient(135deg, var(--primary), var(--primary2)) !important;
+    }
+
+    /* ===== Center Toast ===== */
+    .center-toast{
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(.98);
+      min-width: 280px;
+      max-width: 520px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(0,0,0,.18);
+      z-index: 9999;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: .18s ease;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .center-toast.show{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .center-toast.ok{
+      border-color: rgba(20,184,106,.35);
+      background: rgba(20,184,106,.10);
+      color: #0f7a46;
+    }
+
+    .center-toast.warn{
+      border-color: rgba(245,158,11,.35);
+      background: rgba(245,158,11,.10);
+      color: #8a5a05;
+    }
+
+    .center-toast.danger{
+      border-color: rgba(239,68,68,.35);
+      background: rgba(239,68,68,.10);
+      color: #a31e1e;
+    }
+
+    /* ===== Dashboard Layout ===== */
+    .hero{
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(106,92,255,.25), transparent 60%),
+                  radial-gradient(900px 420px at 90% 20%, rgba(69,49,171,.22), transparent 55%),
+                  linear-gradient(135deg, #ffffff, #ffffff);
+      border:1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-80px -120px auto auto;
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, rgba(69,49,171,.26), rgba(106,92,255,.12));
+      border-radius: 999px;
+      filter: blur(2px);
+      transform: rotate(12deg);
+    }
+    .heroRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      position:relative;
+      z-index:1;
+    }
+    h1{
+      margin: 0 0 4px;
+      font-size: 22px;
+      letter-spacing:.2px;
+      font-weight: 900;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.8;
+      font-weight: 600;
+    }
+    .rightInfo{
+      text-align:left;
+      min-width: 260px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      background: rgba(69,49,171,.08);
+      color: #2d2484;
+      border: 1px solid rgba(69,49,171,.18);
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+    }
+    @media (max-width: 880px){
+      .grid{grid-template-columns:1fr}
+      .rightInfo{text-align:right; min-width:auto}
+      .heroRow{flex-direction:column}
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size: 16px;
+      font-weight: 900;
+    }
+    .muted{color:var(--muted); font-size:13px; line-height:1.9; margin:0 0 10px; font-weight: 600;}
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 560px){
+      .row{grid-template-columns:1fr}
+    }
+    label{
+      display:block;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 6px 0 6px;
+      font-weight: 900;
+    }
+    input, select{
+      width:100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      outline:none;
+      font-size: 14px;
+      background:#fff;
+      transition: .15s ease;
+      font-family: inherit;
+    }
+    input:focus, select:focus{
+      border-color: rgba(69,49,171,.45);
+      box-shadow: 0 0 0 4px rgba(69,49,171,.10);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    button{
+      border:0;
+      cursor:pointer;
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-weight: 900;
+      font-size: 14px;
+      transition: .15s ease;
+      font-family: inherit;
+    }
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color:#fff;
+    }
+    .btnPrimary:disabled{opacity:.6; cursor:not-allowed}
+    .btnGhost{
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btnGhost:disabled{opacity:.6; cursor:not-allowed}
+
+    .fileBox{
+      border: 1px dashed rgba(69,49,171,.35);
+      background: rgba(69,49,171,.04);
+      border-radius: 14px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+    .fileTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 8px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      border:1px solid var(--border);
+      background:#fff;
+      white-space: nowrap;
+    }
+    .chip.ok{border-color: rgba(20,184,106,.25); background: rgba(20,184,106,.10); color: var(--ok)}
+    .chip.warn{border-color: rgba(245,158,11,.25); background: rgba(245,158,11,.10); color: var(--warn)}
+    .chip.danger{border-color: rgba(239,68,68,.25); background: rgba(239,68,68,.10); color: var(--danger)}
+
+    .preview{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top: 8px;
+    }
+    .avatar{
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:#fff;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--muted);
+      font-weight:900;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover}
+
+    a.link{
+      color: #2d2484;
+      font-weight: 900;
+      text-decoration:none;
+    }
+    a.link:hover{text-decoration:underline}
+
+    /* completion meter */
+    .meter{
+      margin: 10px 0 12px;
+      padding: 12px;
+      border:1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(69,49,171,.06), rgba(106,92,255,.04));
+    }
+    .meterTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 10px;
+    }
+    .meterTitle{font-weight: 900;}
+    .meterBar{
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(69,49,171,.10);
+      overflow:hidden;
+    }
+    .meterFill{
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+     /* =========================
+       FOOTER
+       ========================= */
+     .site-footer{
+    margin-top: 18px;
+    background:
+      radial-gradient(1200px 420px at 12% 0%, rgba(106,92,255,.18), transparent 60%),
+      radial-gradient(900px 520px at 88% 25%, rgba(69,49,171,.22), transparent 55%),
+      linear-gradient(135deg, #0b1220, #111827);
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  .footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 26px 14px 14px;
+  }
+
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 1.1fr .9fr .9fr 1.2fr;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .footer-title{
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .footer-text{
+    margin: 0 0 12px;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .footer-links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .footer-links a{
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 700;
+    font-size: 13px;
+    transition: .15s ease;
+  }
+
+  .footer-links a:hover{
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer-newsletter{
+    display:flex;
+    gap: 10px;
+    align-items:center;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px;
+    padding: 8px 10px;
+    max-width: 420px;
+  }
+
+  .footer-newsletter input{
+    flex: 1;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+
+  .footer-newsletter input::placeholder{
+    color: rgba(203,213,225,.75);
+  }
+
+  .footer-newsletter button{
+    width: 44px;
+    height: 40px;
+    border-radius: 12px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    box-shadow: 0 10px 25px rgba(37,99,235,.25);
+    transition: .15s ease;
+  }
+
+  .footer-newsletter button:hover{
+    transform: translateY(-1px);
+  }
+
+  .footer-brand-top{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .footer-logo{
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,.14);
+  }
+
+  .footer-brand-name{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .footer-social{
+    display:flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .social-btn{
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.10);
+    color: #fff;
+    text-decoration:none;
+    transition: .15s ease;
+  }
+
+  .social-btn:hover{
+    background: rgba(69,49,171,.55);
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom{
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    text-align: center;
+    color: rgba(203,213,225,.80);
+    font-size: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px){
+    .footer-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px){
+    .footer-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+/* ===== STICKY FOOTER (dashboard) ===== */
+html, body { height: 100%; }
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* main content grows to push footer down */
+main.wrap{ flex: 1 0 auto; }
+/* footer always at bottom + full width */
+footer.site-footer{
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ===== AUTH GUARD (hide page until session verified) ===== */
+html.auth-pending body{visibility:hidden;}
+
+</style>
+</head>
+
+<body>
+  <!-- Navbar -->
+<!-- Navbar (Same as dashboard) -->
+<header class="header" id="header">
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../assets/images/logo.png" alt="شعار الجوابرة">
+    </a>
+
+    <!-- Desktop menu -->
+    <ul class="nav-menu" id="nav-menu">
+      <li><a class="nav-link" href="../index.html#home">الرئيسية</a></li>
+      <li><a class="nav-link" href="../index.html#services">خدماتنا</a></li>
+      <li><a class="nav-link" href="../index.html#universities">الجامعات</a></li>
+      <li><a class="nav-link" href="../index.html#contact">اتصل بنا</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- زر يعود للرئيسية -->
+      <a class="cta-btn" href="../index.html">
+        <i class="fa-solid fa-house"></i>
+        الرئيسية
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Main content -->
+  <main class="wrap">
+    <div class="hero">
+      <div class="heroRow">
+        <div>
+          <h1>ملف الطالب</h1>
+          <p class="sub">عبّي بياناتك وارفع الوثائق المطلوبة لإكمال ملف التسجيل.</p>
+          <span class="badge" id="userBadge">... جاري التحميل</span>
+        </div>
+        <div class="rightInfo">
+          <p class="sub" style="margin-top:0">
+            بعد إكمال البيانات والملفات، سيتم مراجعتها ثم رفع <b>ملف القبول</b> لك هنا تلقائياً.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- بيانات الطالب -->
+      <section class="card" aria-label="البيانات الأساسية">
+        <h2>البيانات الأساسية</h2>
+        <p class="muted">رجاءً تأكد أن رقم الواتساب صحيح لأن التواصل سيكون عليه.</p>
+
+        <div class="row">
+          <div>
+            <label for="full_name">الاسم الكامل</label>
+            <input id="full_name" placeholder="مثال: محمد أحمد محمود" />
+          </div>
+
+          <div>
+            <label for="mother_name">اسم الأم</label>
+            <input id="mother_name" placeholder="مثال: آمنة" />
+          </div>
+
+          <div>
+            <label for="email">الإيميل</label>
+            <input id="email" type="email" placeholder="example@mail.com" />
+          </div>
+
+          <div>
+            <label for="phone">رقم واتساب</label>
+            <input id="phone" placeholder="+9705XXXXXXXX أو 05XXXXXXXX" />
+          </div>
+
+          <div>
+            <label for="desired_university">الجامعة المطلوبة</label>
+            <input id="desired_university" placeholder="مثال: Istanbul Aydin University" />
+          </div>
+
+          <div>
+            <label for="desired_major">التخصص المطلوب</label>
+            <input id="desired_major" placeholder="مثال: Computer Engineering" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btnPrimary" id="saveProfile">حفظ البيانات</button>
+          <button class="btnGhost" id="refresh">تحديث</button>
+        </div>
+      </section>
+
+      <!-- قائمة الإكمال + ملف القبول -->
+      <section class="card" aria-label="حالة الإكمال">
+        <h2>حالة الإكمال</h2>
+        <p class="muted">هذه القائمة تساعدك تعرف شو ناقص قبل ما يتم اعتماد ملفك.</p>
+
+        <div class="meter">
+          <div class="meterTop">
+            <div class="meterTitle">نسبة الإكمال</div>
+            <span class="chip" id="completionPct">0%</span>
+          </div>
+          <div class="meterBar"><div class="meterFill" id="completionBar"></div></div>
+        </div>
+
+        <div id="checklist" style="display:grid; gap:10px;"></div>
+
+        <hr style="border:none;border-top:1px solid var(--border); margin:14px 0;">
+
+        <h2 style="margin-top:0">ملف القبول</h2>
+        <div id="acceptance">
+          <span class="chip warn">غير متوفر حالياً</span>
+          <p class="muted" style="margin-top:8px">عند صدور ملف القبول سيتم عرضه هنا.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- رفع الملفات -->
+<section class="uploads" style="padding: 30px;">
+  <h2>رفع الوثائق</h2>
+  <p style="color:#666;margin-bottom:14px">ارفع كل وثيقة في مكانها، وبعد الرفع تقدر تشوفها من زر "عرض".</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+
+    <!-- صورة شخصية -->
+    <div class="fileBox">
+      <h4 style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span><i class="fas fa-image" style="margin-left:8px;color:var(--primary-color)"></i>الصورة الشخصية</span>
+        <span id="status_photo" class="file-status">غير مرفوعة</span>
+      </h4>
+
+      <div id="avatarPreviewWrap" style="display:none;margin:10px 0 6px">
+        <img id="avatarPreview" alt="صورة شخصية" style="width:84px;height:84px;object-fit:cover;border-radius:14px;border:2px solid rgba(0,0,0,.08)"/>
+      </div>
+
+      <input type="file" id="photo_file" accept="image/*" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button id="uploadPhoto" class="btn btn-primary" type="button"><i class="fas fa-upload"></i> رفع</button>
+        <a id="viewPhoto" class="btn btn-secondary" href="#" target="_blank" style="display:none"><i class="fas fa-eye"></i> عرض</a>
+      </div>
+    </div>
+
+    <!-- جواز السفر -->
+    <div class="fileBox">
+      <h4 style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span><i class="fas fa-passport" style="margin-left:8px;color:var(--primary-color)"></i>جواز السفر</span>
+        <span id="status_passport" class="file-status">غير مرفوعة</span>
+      </h4>
+      <input type="file" id="passport_file" accept=".pdf,.jpg,.jpeg,.png" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button id="uploadPassport" class="btn btn-primary" type="button"><i class="fas fa-upload"></i> رفع</button>
+        <a id="viewPassport" class="btn btn-secondary" href="#" target="_blank" style="display:none"><i class="fas fa-eye"></i> عرض</a>
+      </div>
+    </div>
+
+    <!-- كشف العلامات -->
+    <div class="fileBox">
+      <h4 style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span><i class="fas fa-file-lines" style="margin-left:8px;color:var(--primary-color)"></i>كشف العلامات</span>
+        <span id="status_transcript" class="file-status">غير مرفوعة</span>
+      </h4>
+      <input type="file" id="transcript_file" accept=".pdf,.jpg,.jpeg,.png" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button id="uploadTranscript" class="btn btn-primary" type="button"><i class="fas fa-upload"></i> رفع</button>
+        <a id="viewTranscript" class="btn btn-secondary" href="#" target="_blank" style="display:none"><i class="fas fa-eye"></i> عرض</a>
+      </div>
+    </div>
+
+    <!-- شهادة الثانوية -->
+    <div class="fileBox">
+      <h4 style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span><i class="fas fa-file-certificate" style="margin-left:8px;color:var(--primary-color)"></i>شهادة الثانوية</span>
+        <span id="status_secondary" class="file-status">غير مرفوعة</span>
+      </h4>
+      <input type="file" id="secondary_file" accept=".pdf,.jpg,.jpeg,.png" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button id="uploadSecondary" class="btn btn-primary" type="button"><i class="fas fa-upload"></i> رفع</button>
+        <a id="viewSecondary" class="btn btn-secondary" href="#" target="_blank" style="display:none"><i class="fas fa-eye"></i> عرض</a>
+      </div>
+    </div>
+
+    <!-- أخرى -->
+    <div class="fileBox">
+      <h4 style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <span><i class="fas fa-folder-plus" style="margin-left:8px;color:var(--primary-color)"></i>وثائق أخرى</span>
+        <span id="status_other" class="file-status">غير مرفوعة</span>
+      </h4>
+      <input type="file" id="other_file" accept=".pdf,.jpg,.jpeg,.png" />
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button id="uploadOther" class="btn btn-primary" type="button"><i class="fas fa-upload"></i> رفع</button>
+        <a id="viewOther" class="btn btn-secondary" href="#" target="_blank" style="display:none"><i class="fas fa-eye"></i> عرض</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- WhatsApp Float Button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/message/EUGNIXH6NHRZL1" target="_blank" class="whatsapp-btn" rel="noopener noreferrer" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Center toast -->
+  <div id="centerToast" class="center-toast" aria-live="polite"></div>
+
+  <!-- Dashboard logic -->
+  <script type="module" src="../assets/js/dashboard.js"></script>
+<script type="module" src="../assets/js/navbar-auth.js"></script>
+    
+
+  <!-- Navbar drawer JS -->
+  <script>
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const backdrop  = document.getElementById('drawerBackdrop');
+      const closeBtn  = document.getElementById('drawerClose');
+
+      function openDrawer(){ document.body.classList.add('drawer-open'); }
+      function closeDrawer(){ document.body.classList.remove('drawer-open'); }
+
+      hamburger?.addEventListener('click', openDrawer);
+      backdrop?.addEventListener('click', closeDrawer);
+      closeBtn?.addEventListener('click', closeDrawer);
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') closeDrawer();
+      });
+
+      document.querySelectorAll('#drawer a').forEach(a=>{
+        a.addEventListener('click', closeDrawer);
+      });
+    })();
+  </script>
+
+
+
+<!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer" id="siteFooter">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+      <!-- Newsletter -->
+      <div class="footer-col">
+        <h4 class="footer-title">اشترك في النشرة الإخبارية</h4>
+        <p class="footer-text">احصل على آخر الأخبار والعروض التعليمية</p>
+
+        <form class="footer-newsletter" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+          <button type="submit" aria-label="اشتراك">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4 class="footer-title">خدماتنا</h4>
+        <ul class="footer-links">
+          <li><a href="#services">تسجيل الجامعات</a></li>
+          <li><a href="#services">الاستشارات التعليمية</a></li>
+          <li><a href="#services">المنح والخصومات</a></li>
+          <li><a href="#services">السكن الطلابي</a></li>
+          <li><a href="#services">استقبال المطار</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#universities">الجامعات</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        
+<li><a href="../pages/legal/privacy.html">سياسة الخصوصية</a></li>
+<li><a href="../pages/legal/terms.html">الشروط والأحكام</a></li>
+<li><a href="../pages/legal/data-protection.html">حماية البيانات</a></li>
+</ul>
+      </div>
+
+      <!-- Brand -->
+      <div class="footer-col footer-brand">
+        <div class="footer-brand-top">
+          <img class="footer-logo" src="../assets/images/logo.png" alt="AL-Jawabreh Logo">
+          <h3 class="footer-brand-name">الجوابرة للخدمات التعليمية</h3>
+        </div>
+
+        <p class="footer-text">
+          نعمل بتفانٍ لتقديم تجربة تعليمية مميزة تساعد طلابنا على بناء مستقبلهم.
+          معاً نسعى لتحقيق التميز والنجاح.
+        </p>
+
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="social-btn" href="mailto:aljawabreh.edu@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a class="social-btn" href="https://wa.me/message/EUGNIXH6NHRZL1" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="social-btn" href="https://www.facebook.com/profile.php?id=100086928950629" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 جميع الحقوق محفوظة لدى الجوابرة للخدمات التعليمية</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
