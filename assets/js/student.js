@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const user = data?.user;
 
     if (error || !user) {
-      window.location.replace(toUrl("auth/index.html"));
+      window.location.replace(new URL("../auth/index.html", window.location.href).toString());
       return null;
     }
     return user;
